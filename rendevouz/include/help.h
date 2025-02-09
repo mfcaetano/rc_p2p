@@ -13,9 +13,12 @@ Last update: 02/08/25.
 #define __HELP_H__
 
 
+#include <netinet/in.h> 
+
+
 void print_help_menu();
 
-void processing_menu(int argc, char* argv[]);
+int processing_menu(int argc, char* argv[], struct sockaddr_in* server_addr);
 
 
 #endif

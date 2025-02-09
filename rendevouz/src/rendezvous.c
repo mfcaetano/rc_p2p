@@ -12,9 +12,25 @@ Last update: 02/08/25.
 */
 
 #include "help.h"
+#include <stdio.h>
+#include <netinet/in.h> 
+#include <sys/socket.h>
+#include <arpa/inet.h>
+
 
 int main(int argc, char* argv[]){
-	processing_menu(argc, argv);
+	struct sockaddr_in server_addr;
+
+	if(argc == 1){
+		printf("No arguments provided. Use -h for mor information.\n");
+		return 1;
+	}//end argc
+
+	if(processing_menu(argc, argv, &server_addr))
+		return 1;
+
+	printf("IP: %s, Port: %d\n", inet_ntoa(server_addr.sin_addr), ntohs(server_addr.sin_port));
+
 
 
 	return 0;
