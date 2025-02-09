@@ -11,7 +11,7 @@ Autor: Marcos F. Caetano - mfcaetano@unb.br
 Last update: 02/08/25.
 */
 
-#include "help.h"
+#include "help_menu.h"
 #include <stdio.h>
 #include <netinet/in.h> 
 #include <sys/socket.h>

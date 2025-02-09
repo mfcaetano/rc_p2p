@@ -11,7 +11,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -I$(INCLUDE_DIR)
 
 # List of source files
-SRCS = $(SRC_DIR)/rendezvous.c $(SRC_DIR)/help.c
+SRCS = $(SRC_DIR)/rendezvous.c $(SRC_DIR)/help_menu.c
 
 # Generate object files by replacing .c with .o
 OBJS = $(SRCS:.c=.o)

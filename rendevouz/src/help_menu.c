@@ -1,5 +1,5 @@
 /*
-File: help.c
+File: help_menu.c
 
 Description:
 	- 
@@ -15,7 +15,7 @@ Last update: 02/08/25.
 #include <netinet/in.h> 
 #include <sys/socket.h>
 #include <arpa/inet.h>
-#include "help.h"
+#include "help_menu.h"
 
 
 void print_help_menu(){
