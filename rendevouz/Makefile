@@ -9,9 +9,10 @@ BIN_DIR = bin
 # Compiler and flags
 CC = gcc
 CFLAGS = -Wall -Wextra -I$(INCLUDE_DIR)
+LDFLAGS = -lsqlite3
 
 # List of source files
-SRCS = $(SRC_DIR)/rendezvous.c $(SRC_DIR)/help_menu.c
+SRCS = $(SRC_DIR)/rendezvous.c $(SRC_DIR)/help_menu.c $(SRC_DIR)/sql_database.c
 
 # Generate object files by replacing .c with .o
 OBJS = $(SRCS:.c=.o)
@@ -21,7 +22,7 @@ all: $(TARGET)
 
 # Compile the final program
 $(TARGET): $(OBJS)
-	$(CC) $(OBJS) -o $(BIN_DIR)/$(TARGET)
+	$(CC) $(CFLAGS) $(OBJS) -o $(BIN_DIR)/$(TARGET) $(LDFLAGS)
 
 # Rule to compile .c files into .o
 $(SRC_DIR)/%.o: $(SRC_DIR)/%.c $(INCLUDE_DIR)/%.h
